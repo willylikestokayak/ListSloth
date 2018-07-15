@@ -1,0 +1,33 @@
+body {
+	background-color: grey;
+} 
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 300px;
+}
+
+li {
+	border: 1px solid #ccc;
+	background: #eee;
+	padding: 5px 10px;
+	color: rgb(250, 2, 2);
+	font-weight: 900;
+}
+
+li span {
+	padding-left: 10px;
+}
+
+.checked {
+	text-decoration: line-through;
+	color: rgb(50, 228, 50);
+	font-weight: 500;
+}
+
+.notChecked {
+	text-decoration: none;
+	color: rgb(250, 2, 2);
+	font-weight: 900;
+}
