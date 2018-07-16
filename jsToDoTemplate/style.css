@@ -1,6 +1,20 @@
 body {
 	background-color: grey;
 } 
+
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bolder;
+	font-size: 40px;
+	
+}
+
+#inItemText {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-style: italic;
+	font-size: 25px;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
@@ -14,6 +28,8 @@ li {
 	padding: 5px 10px;
 	color: rgb(250, 2, 2);
 	font-weight: 900;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 25px;
 }
 
 li span {
@@ -24,10 +40,21 @@ li span {
 	text-decoration: line-through;
 	color: rgb(50, 228, 50);
 	font-weight: 500;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-style: italic;
+	font-size: 25px;
 }
 
 .notChecked {
 	text-decoration: none;
 	color: rgb(250, 2, 2);
 	font-weight: 900;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 25px;
+}
+
+p {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 15px;
+	font-style: italic;
 }

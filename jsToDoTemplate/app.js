@@ -1,4 +1,3 @@
-alert('hey dummy, find a job');
 // Each list item should follow the below formatting
 // <li><input type="checkbox"/><span>Make a list</span></li>
 
@@ -13,8 +12,16 @@ function updateItemStatus () {
 	} else {
 		itemText.className = "notChecked";
 	}
-	
 }
+
+// function deleteItemStatus() {
+// 	console.log('delete button pushed');
+// 	//console.log("list item ID# " + li);
+// 	var ulParent = document.getElementById("list");
+// 	var deleteListItem = document.getElementsByClassName("li");
+// 	ulParent.removeChild(deleteListItem);
+// 	return false;
+// }
 
 function renameItem() {
 	//this == span
@@ -23,41 +30,38 @@ function renameItem() {
 	if (!newText || newText == "" || newText == " ") {
 		return false;
 		}
-
-		this.innerText = newText;
-
-
-}
-
-function removeItem() {
-	//this == span
-	var spanId = this.id.replace("item_", "");
-	document.getElementById("li_" + spanId).style.display = "none";
+	this.innerText = newText;
 }
 
 function addNewItem(list, itemText) {
 	var date = new Date();
 	var id = "" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
 
-
 	var listItem = document.createElement("li");
 	listItem.id = "li_" + id;
-
+	console.log(listItem.id + " local li id");
+	
 	var checkBox = document.createElement("input");
 	checkBox.type = "checkbox";
 	checkBox.id = "cb_" + id;
 	checkBox.onclick = updateItemStatus;
-	console.log(checkBox.id);
 	
+	var removeTask = document.createElement("input");
+	removeTask.setAttribute('type', 'button');
+  removeTask.setAttribute("value", "Remove");
+  removeTask.setAttribute("id", "removeButton");
+  removeTask.addEventListener('click', function(e) {
+  listItem.parentNode.removeChild(listItem);
+    }, false);
+		listItem.appendChild(removeTask);
+		
 	var span = document.createElement("span");
 	span.id = "item_" + id;
 	span.innerText = itemText;
-	
-	//edit functions - revise soon - double click delete
 	span.onclick = renameItem;
-	span.ondblclick = removeItem;
 	
 	listItem.appendChild(checkBox);
+	listItem.appendChild(removeTask);
 	listItem.appendChild(span);
 	list.appendChild(listItem);
 }
